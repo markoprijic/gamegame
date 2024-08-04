@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour //by bendux (on youtube)
 {
     private float horizontal;
     private float speed = 8f;
-    private float jumpingPower = 10f;
+    public float jumpingPower = 10f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour //by bendux (on youtube)
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
-            rb.velocity = new Vector2 (rb.velocity.x, rb.velocity.y * 0.5f);
+            rb.velocity = new Vector2 (rb.velocity.x, rb.velocity.y * 0.1f);
         }
 
         Flip();
